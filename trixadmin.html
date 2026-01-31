@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Novex Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <style>
+        .admin-box { background: #111; padding: 30px; border-radius: 10px; border: 1px solid #333; margin-bottom: 20px; }
+        label { color: var(--neon-yellow); display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 12px; background: #000; border: 1px solid #333; color: white; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div id="login-view" style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div class="admin-box" style="width: 350px; text-align: center;">
+            <h2 class="text-neon">ADMIN ACCESS</h2>
+            <input type="password" id="admin-pass" placeholder="Password">
+            <button onclick="attemptLogin()" class="btn-main" style="width: 100%;">LOGIN</button>
+        </div>
+    </div>
+    <div id="dash-view" class="container hidden" style="padding: 50px 20px;">
+        <h1 class="text-neon">DASHBOARD</h1>
+        <div class="grid">
+            <div class="admin-box">
+                <h3>SYNC RUGS DATA</h3>
+                <input type="file" id="csv-file" accept=".csv">
+                <button onclick="processCSV()" class="btn-main" style="width: 100%;">UPLOAD</button>
+                <p id="upload-status" style="margin-top: 10px;"></p>
+            </div>
+            <div class="admin-box">
+                <h3>SEASON TIMER</h3>
+                <input type="datetime-local" id="end-date">
+                <button onclick="saveTimer()" class="btn-main" style="width: 100%;">SET TIMER</button>
+            </div>
+        </div>
+        <div class="admin-box">
+            <h3>PRIZE MANAGER</h3>
+            <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div><label>Rank 1</label><input type="text" id="prize-1"></div>
+                <div><label>Rank 2</label><input type="text" id="prize-2"></div>
+                <div><label>Rank 3</label><input type="text" id="prize-3"></div>
+                <div><label>Rank 4</label><input type="text" id="prize-4"></div>
+                <div><label>Rank 5</label><input type="text" id="prize-5"></div>
+                <div><label>Ranks 6-10</label><input type="text" id="prize-rest"></div>
+            </div>
+            <button onclick="savePrizes()" class="btn-main" style="width: 100%;">SAVE PRIZES</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        if(sessionStorage.getItem('novexAdmin') === 'true') {
+            document.getElementById('login-view').classList.add('hidden');
+            document.getElementById('dash-view').classList.remove('hidden');
+            loadAdminSettings();
+        }
+    </script>
+</body>
+</html>

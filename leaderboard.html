@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NovexRewards | Choose Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="falling-container"></div>
+    <nav>
+        <div class="nav-logo-group">
+            <a href="index.html"><img src="images/logo.png" class="nav-logo-img"></a>
+            <div class="logo-text">NOVEX<span class="text-neon">REWARDS</span></div>
+        </div>
+        <a href="index.html">HOME</a>
+    </nav>
+    <div class="container" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1 style="font-family: var(--font-header); margin-bottom: 10px;">SELECT <span class="text-neon">PLATFORM</span></h1>
+        <div class="grid" style="width: 100%; max-width: 900px; margin-top: 40px;">
+            
+            <div class="feature-card" style="text-align: center; cursor: pointer;" onclick="window.location.href='leaderboard-rugs.html'">
+                <img src="images/rugsdotfun.png" style="height: 60px; margin-bottom: 25px; filter: drop-shadow(0 0 10px #FFFF00);">
+                <h2 class="text-neon">RUGS.FUN</h2>
+                <button class="btn-main" style="margin-top: 20px; width: 100%;">VIEW RANKINGS</button>
+            </div>
+
+            <div class="feature-card" style="text-align: center; cursor: pointer;" onclick="goToOracl()">
+                <img src="images/oracl.png" style="height: 90px; margin-bottom: 15px; filter: drop-shadow(0 0 10px #A020F0);">
+                <h2 style="color: #A020F0; text-shadow: 0 0 15px #A020F0;">ORACL.FUN</h2>
+                <button class="btn-main" style="margin-top: 20px; width: 100%; border-color: #A020F0; color: #A020F0;">GO TO ORACL</button>
+            </div>
+        </div>
+        <div style="margin-top: 60px; padding: 25px; border: 2px dashed var(--neon-yellow); background: rgba(255,255,0,0.05); text-align: center; border-radius: 10px;">
+            <p style="margin: 0; font-weight: bold; font-size: 1.2rem;">
+                MUST USE CODE <span class="text-neon" style="text-decoration: underline;">NOVEXREF</span> ON BOTH PLATFORMS
+            </p>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <script src="app.js"></script>
+    <script>window.onload = () => startFallingEffect();</script>
+</body>
+</html>
