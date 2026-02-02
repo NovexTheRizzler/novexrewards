@@ -1,4 +1,5 @@
-/* --- GLOBAL VARIABLES --- */
+
+
 :root {
     --neon-yellow: #FFFF00;
     --neon-glow: rgba(255, 255, 0, 0.6);
@@ -22,12 +23,12 @@ body {
 a { text-decoration: none; color: white; transition: 0.3s; }
 a:hover { color: var(--neon-yellow); text-shadow: 0 0 10px var(--neon-glow); }
 
-/* --- FALLING ANIMATION --- */
+
 #falling-container {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
-    z-index: 1; /* Behind text, in front of background */
+    z-index: 1;
     overflow: hidden;
 }
 
@@ -45,7 +46,7 @@ a:hover { color: var(--neon-yellow); text-shadow: 0 0 10px var(--neon-glow); }
     100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
-/* --- NAVIGATION --- */
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -64,7 +65,6 @@ nav {
 .logo-text { font-family: var(--font-header); font-size: 1.5rem; letter-spacing: 2px; }
 .text-neon { color: var(--neon-yellow); text-shadow: 0 0 15px var(--neon-glow); }
 
-/* --- HERO & BUTTONS --- */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -102,7 +102,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* --- WHY US SECTION --- */
 .features-section { padding: 100px 20px; position: relative; z-index: 2; }
 .feature-card {
     background: var(--card-bg);
@@ -118,7 +117,6 @@ nav {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* --- FOOTER --- */
 footer {
     background: #000;
     border-top: 1px solid #222;
@@ -136,7 +134,6 @@ footer {
 .social-links a { font-size: 1.5rem; margin-right: 20px; color: #666; transition: 0.3s; }
 .social-links a:hover { color: var(--neon-yellow); }
 
-/* --- LEADERBOARD SPECIFICS --- */
 .header-logo-glow {
     width: 100px;
     filter: drop-shadow(0 0 15px var(--neon-yellow));
@@ -216,7 +213,6 @@ th, td { padding: 20px; border-bottom: 1px solid #222; text-align: left; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .hidden { display: none !important; }
 
-/* --- STATUS INDICATORS --- */
 .status-badge {
     display: inline-block;
     padding: 5px 12px;
@@ -248,7 +244,6 @@ th, td { padding: 20px; border-bottom: 1px solid #222; text-align: left; }
     100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
 }
 
-/* Animation for page switching */
 body {
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
@@ -259,7 +254,6 @@ body.page-exit {
     pointer-events: none;
 }
 
-/* Smooth entry for all page content */
 .container, .hero {
     animation: fadeIn 0.8s ease-out;
 }
@@ -267,4 +261,5 @@ body.page-exit {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+
 }
