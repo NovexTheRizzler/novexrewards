@@ -53,11 +53,11 @@ function renderSelectionStatus() {
         const rugsBadge = document.getElementById('indicator-rugs');
         const oraclBadge = document.getElementById('indicator-oracl');
         if(rugsBadge) {
-            rugsBadge.innerHTML = s.rugs === 'LIVE' ? '泙 LIVE NOW' : '閥 NOT ACTIVE';
+            rugsBadge.innerHTML = s.rugs === 'LIVE' ? 'LIVE NOW' : 'NOT ACTIVE';
             rugsBadge.className = s.rugs === 'LIVE' ? 'status-badge live' : 'status-badge offline';
         }
         if(oraclBadge) {
-            oraclBadge.innerHTML = s.oracl === 'LIVE' ? '泙 LIVE NOW' : '閥 NOT ACTIVE';
+            oraclBadge.innerHTML = s.oracl === 'LIVE' ? 'LIVE NOW' : 'NOT ACTIVE';
             oraclBadge.className = s.oracl === 'LIVE' ? 'status-badge live' : 'status-badge offline';
         }
     });
